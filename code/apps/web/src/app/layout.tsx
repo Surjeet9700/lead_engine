@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-	title: 'Lead Speed Engine',
-	description: 'IndiaMart leads → WhatsApp in 45 seconds',
+	title: 'Axis · Industrial Lead Speed Engine & CRM',
+	description: 'Capture IndiaMart leads in <80ms, normalize machinery specs, dispatch WhatsApp quotes in <45s, and automate BuyLead refunds with Axis CRM.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

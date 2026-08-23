@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { Logo } from "@/components/ui/logo";
 import { cn } from "@/lib/utils";
 import {
 	Bot,
@@ -57,9 +58,27 @@ export function AppIconRail() {
 			{/* Desktop Icon Rail */}
 			<nav
 				aria-label="Primary Navigation"
-				className="hidden w-16 shrink-0 flex-col items-center justify-between border-r border-border/80 bg-background py-4 md:flex"
+				className="hidden w-16 shrink-0 flex-col items-center justify-between border-r border-border/80 bg-background py-3 md:flex"
 			>
 				<div className="flex flex-col items-center gap-2">
+					{/* Axis Logo Mark */}
+					<Tooltip>
+						<TooltipTrigger asChild>
+							<Link
+								href="/dashboard"
+								className="mb-2 flex size-10 items-center justify-center rounded-xl transition-transform hover:scale-105"
+								aria-label="Axis Home"
+							>
+								<Logo showWordmark={false} />
+							</Link>
+						</TooltipTrigger>
+						<TooltipContent side="right" className="font-semibold">
+							Axis CRM
+						</TooltipContent>
+					</Tooltip>
+
+					<div className="w-8 h-px bg-border/60 mb-1" />
+
 					{NAV_ITEMS.map((item) => {
 						const active = isItemActive(item, pathname);
 						const Icon = item.icon;
@@ -103,7 +122,7 @@ export function AppIconRail() {
 					})}
 				</div>
 
-				{/* Bottom Home Link */}
+				{/* Bottom Home / Landing Link */}
 				<Tooltip>
 					<TooltipTrigger asChild>
 						<Button
@@ -137,7 +156,9 @@ export function AppIconRail() {
 			<Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
 				<SheetContent side="left" className="w-72 p-0">
 					<SheetHeader className="border-b p-4">
-						<SheetTitle className="text-base">Navigation</SheetTitle>
+						<SheetTitle className="text-base text-left">
+							<Logo showWordmark={true} />
+						</SheetTitle>
 					</SheetHeader>
 					<div className="flex flex-col gap-1 p-3">
 						{NAV_ITEMS.map((item) => {
