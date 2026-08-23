@@ -74,6 +74,7 @@
   --ring: oklch(0.708 0 0);
   --radius: 0.625rem;
   --spacing: 0.25rem;
+  --tracking-normal: 0em;
 }
 
 .dark {

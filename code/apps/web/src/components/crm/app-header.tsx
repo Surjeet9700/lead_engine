@@ -97,16 +97,15 @@ export function AppHeader({
 
 			{/* Right: SLA Status + AI Copilot + Theme Toggle + User Avatar */}
 			<div className="flex items-center gap-3">
-				{/* Live SLA Pulse */}
-				<div className="hidden items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-xs font-medium text-amber-400 sm:flex">
-					<Zap className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-					<span>45s SLA Active</span>
-					<StatusIndicator tone="warning" pulse />
+				{/* Clean Monochrome SLA Indicator */}
+				<div className="hidden items-center gap-2 rounded-full border border-border bg-muted/50 px-2.5 py-1 text-xs font-medium text-foreground sm:flex">
+					<span className="inline-block size-2 rounded-full bg-emerald-500" />
+					<span>45s SLA Engine Active</span>
 				</div>
 
 				<Button asChild variant="ghost" size="sm" className="hidden lg:flex gap-1.5 text-xs text-muted-foreground hover:text-foreground">
 					<Link href="/chat">
-						<Sparkles className="h-3.5 w-3.5 text-amber-400" />
+						<Sparkles className="h-3.5 w-3.5 text-muted-foreground" />
 						<span>Eve Copilot</span>
 					</Link>
 				</Button>
@@ -144,7 +143,7 @@ export function AppHeader({
 						</DropdownMenuLabel>
 						<DropdownMenuSeparator />
 						<DropdownMenuItem onClick={() => router.push("/settings")}>
-							Settings & API
+							Settings &amp; API
 						</DropdownMenuItem>
 						<DropdownMenuItem onClick={() => router.push("/recovery")}>
 							Credit Recovery Ledger

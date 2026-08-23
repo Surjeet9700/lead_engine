@@ -1,131 +1,151 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import { motion } from "motion/react";
+import Image from "next/image"
+import { motion } from "motion/react"
 
 const features = [
-	{
-		title: "Sub-45s Speed to Lead",
-		description:
-			"Capture IndiaMart webhooks in <100ms and dispatch verified WhatsApp quotes before competitors even open the portal.",
-	},
-	{
-		title: "Machinery & Technical Spec Matching",
-		description:
-			"Dynamic catalog matching for Industrial Pumps, Air Compressors, Diesel Generators, Motors, and Heavy Equipment.",
-	},
-	{
-		title: "Automatic BuyLead Refunds",
-		description:
-			"Identify spam, student projects, and fake inquiries instantly and generate dispute claims for credit reversals.",
-	},
-	{
-		title: "Exotel Voice Fallback",
-		description:
-			"Trigger automated AI voice calls when high-priority buyers don't open WhatsApp messages within 120 seconds.",
-	},
+    {
+        title: "Clients, not leads",
+        description:
+            "See the full history of every client: conversations, proposals, projects, and past work.",
+    },
+    {
+        title: "Simple deal tracking",
+        description:
+            "Track proposals, retainers, and renewals without complex pipelines.",
+    },
+    {
+        title: "Clear next steps",
+        description:
+            "Always know who to follow up with and what needs to happen next.",
+    },
+    {
+        title: "Built for small teams",
+        description:
+            "Works just as well for solo consultants as it does for small firms.",
+    },
 ];
 
 const Feature = () => {
-	return (
-		<motion.section
-			id="features"
-			className="relative mx-auto max-w-7xl px-4"
-			initial={{ opacity: 0, y: 20 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			viewport={{ once: true, amount: 0.15 }}
-			transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-		>
-			<div className="mb-12 text-center lg:mb-16 max-lg:hidden">
-				<h2 className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
-					Engineered for high-velocity industrial B2B sales
-				</h2>
-				<p className="mt-4 text-sm text-muted-foreground sm:text-lg">
-					Everything you need to capture, qualify, and close IndiaMart leads—without manual delay.
-				</p>
-			</div>
+    return (
+        <motion.section
+            className="relative mx-auto max-w-7xl px-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+            <div className="mb-12 text-center lg:mb-16 max-lg:hidden">
+                <h2 className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
+                    Axis is designed for you
+                </h2>
+                <p className="mt-4 text-sm text-muted-foreground sm:text-lg">
+                    Everything you need to manage clients and deals—nothing you don&apos;t
+                </p>
+            </div>
 
-			<div className="hidden lg:grid lg:grid-cols-[1fr_2.5fr_1fr] lg:items-center lg:gap-12">
-				<section className="flex flex-col gap-32 pb-24">
-					<div className="max-w-[240px]">
-						<h3 className="mb-2 text-lg font-medium text-foreground">
-							{features[0].title}
-						</h3>
-						<p className="text-sm leading-relaxed text-muted-foreground">
-							{features[0].description}
-						</p>
-					</div>
-					<div className="max-w-[240px]">
-						<h3 className="mb-2 text-lg font-medium text-foreground">
-							{features[1].title}
-						</h3>
-						<p className="text-sm leading-relaxed text-muted-foreground">
-							{features[1].description}
-						</p>
-					</div>
-				</section>
-				<div className="flex justify-center">
-					<Image
-						src="/images/templates/axis/feature.svg"
-						alt="Lead Speed CRM Feature Visual"
-						width={500}
-						height={500}
-						className="h-auto w-full max-w-[420px]"
-					/>
-				</div>
-				<section className="flex flex-col gap-32 pb-24">
-					<div className="max-w-[240px]">
-						<h3 className="mb-2 text-lg font-medium text-foreground">
-							{features[2].title}
-						</h3>
-						<p className="text-sm leading-relaxed text-muted-foreground">
-							{features[2].description}
-						</p>
-					</div>
-					<div className="max-w-[240px]">
-						<h3 className="mb-2 text-lg font-medium text-foreground">
-							{features[3].title}
-						</h3>
-						<p className="text-sm leading-relaxed text-muted-foreground">
-							{features[3].description}
-						</p>
-					</div>
-				</section>
-			</div>
+            <div className="hidden lg:grid lg:grid-cols-[1fr_2.5fr_1fr] lg:items-center lg:gap-12">
+                <section className="flex flex-col gap-32 pb-24">
+                    <div className="max-w-[240px]">
+                        <h3 className="mb-2 text-lg font-medium text-foreground">
+                            {features[0].title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                            {features[0].description}
+                        </p>
+                    </div>
+                    <div className="max-w-[240px]">
+                        <h3 className="mb-2 text-lg font-medium text-foreground">
+                            {features[1].title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                            {features[1].description}
+                        </p>
+                    </div>
+                </section>
 
-			<div className="flex flex-col gap-8 lg:hidden">
-				<div className="text-center">
-					<h2 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
-						Engineered for high-velocity industrial B2B sales
-					</h2>
-					<p className="mt-2 text-sm text-muted-foreground">
-						Capture, score, and quote machinery inquiries in seconds.
-					</p>
-				</div>
-				<div className="flex justify-center">
-					<Image
-						src="/images/templates/axis/feature.svg"
-						alt="Lead Speed CRM Feature Visual"
-						width={400}
-						height={400}
-						className="h-auto w-full max-w-[320px]"
-					/>
-				</div>
-				<div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-					{features.map((feature, index) => (
-						<div key={index} className="rounded-xl border border-border p-4">
-							<h3 className="mb-1 text-base font-medium text-foreground">
-								{feature.title}
-							</h3>
-							<p className="text-sm leading-relaxed text-muted-foreground">
-								{feature.description}
-							</p>
-						</div>
-					))}
-				</div>
-			</div>
-		</motion.section>
-	);
+                <section className="relative flex justify-center">
+                    <Image
+                        src="/images/templates/axis/feature.svg"
+                        alt="Product feature screenshot"
+                        width={720}
+                        height={480}
+                        className="h-auto w-full max-md:hidden dark:hidden"
+                        priority
+                    />
+                    <Image
+                        src="/images/templates/axis/feature-dark.svg"
+                        alt="Product feature screenshot"
+                        width={720}
+                        height={480}
+                        className="hidden h-auto w-full max-md:hidden dark:block"
+                        priority
+                    />
+                </section>
+
+                <section className="flex flex-col gap-32 pt-32">
+                    <div className="max-w-xl">
+                        <h3 className="mb-2 text-lg font-medium text-foreground">
+                            {features[2].title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                            {features[2].description}
+                        </p>
+                    </div>
+                    <div className="max-w-xl">
+                        <h3 className="mb-2 text-lg font-medium text-foreground">
+                            {features[3].title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                            {features[3].description}
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            <div className="flex flex-col gap-8 lg:hidden">
+                <section className="relative flex justify-center">
+                    <Image
+                        src="/images/templates/axis/feature-mobile.svg"
+                        alt="Product feature screenshot Mobile"
+                        width={320}
+                        height={560}
+                        className="hidden h-auto w-full max-md:block dark:hidden"
+                        priority
+                    />
+                    <Image
+                        src="/images/templates/axis/feature-dark-mobile.svg"
+                        alt="Product feature screenshot Mobile"
+                        width={320}
+                        height={560}
+                        className="hidden h-auto w-full max-md:dark:block"
+                        priority
+                    />
+                </section>
+
+                <section className="flex flex-col gap-4">
+                    <p className="text-center text-foreground text-2xl">
+                        Axis is designed for you
+                    </p>
+                    <p className="text-center text-muted-foreground">
+                        Everything you need to manage clients and deals—nothing you don&apos;t
+                    </p>
+
+                    <div className="flex flex-col">
+                        {features.map((feature, index) => (
+                            <div key={index} className="py-6">
+                                <h3 className="mb-2 text-lg font-medium text-foreground">{feature.title}</h3>
+                                <p className="leading-relaxed text-muted-foreground">
+                                    {feature.description}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+            </div>
+        </motion.section>
+    );
 };
 
 export default Feature;

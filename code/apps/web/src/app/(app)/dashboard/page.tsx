@@ -57,9 +57,9 @@ const SAMPLE_TREND = [
 ];
 
 const STAGE_SLICES = [
-	{ key: "hot", label: "Hot Spec (<45s WA)", value: 68, color: "#f59e0b", count: 68 },
-	{ key: "warm", label: "Warm Inquiries", value: 34, color: "#d97706", count: 34 },
-	{ key: "quiet", label: "Quiet Hours Digest", value: 18, color: "#b45309", count: 18 },
+	{ key: "hot", label: "Hot Spec (<45s WA)", value: 68, color: "#10b981", count: 68 },
+	{ key: "warm", label: "Warm Inquiries", value: 34, color: "#3b82f6", count: 34 },
+	{ key: "quiet", label: "Quiet Hours Digest", value: 18, color: "#8b5cf6", count: 18 },
 	{ key: "spam", label: "Spam / Auto Refund", value: 34, color: "#64748b", count: 34 },
 ];
 
@@ -249,11 +249,11 @@ export default function DashboardPage() {
 							variant="outline"
 							className={`text-xs ${
 								isConnected
-									? 'text-amber-400 border-amber-500/30 bg-amber-500/10 animate-pulse'
+									? 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10'
 									: 'text-zinc-400 border-zinc-700 bg-zinc-900'
 							}`}
 						>
-							<span className={`mr-1.5 inline-block h-2 w-2 rounded-full ${isConnected ? 'bg-amber-400' : 'bg-zinc-500'}`} />
+							<span className={`mr-1.5 inline-block h-2 w-2 rounded-full ${isConnected ? 'bg-emerald-400 animate-pulse' : 'bg-zinc-500'}`} />
 							{isConnected ? 'Edge Engine Active (SSE Live)' : 'Edge Engine Standby'}
 						</Badge>
 					</div>
@@ -266,7 +266,7 @@ export default function DashboardPage() {
 					<Button
 						size="sm"
 						variant="outline"
-						className="gap-1.5 border-amber-500/40 bg-amber-500/10 text-amber-400 hover:bg-amber-500/20"
+						className="gap-1.5 border-border bg-muted/40 hover:bg-muted text-foreground"
 						onClick={() => {
 							const randId = `IM-${Math.floor(10000 + Math.random() * 90000)}`;
 							const newLead: LeadItem = {
@@ -285,16 +285,16 @@ export default function DashboardPage() {
 							setLeads((prev) => [newLead, ...prev]);
 						}}
 					>
-						<Zap className="h-4 w-4 text-amber-400 fill-current" />
+						<Zap className="h-4 w-4 text-foreground" />
 						<span>Simulate Inbound Lead</span>
 					</Button>
-					<Button asChild size="sm" variant="outline" className="gap-1.5">
+					<Button asChild size="sm" variant="outline" className="gap-1.5 border-border bg-card hover:bg-muted text-foreground">
 						<Link href="/leads">
-							<Zap className="h-4 w-4 text-amber-400" />
+							<Zap className="h-4 w-4 text-muted-foreground" />
 							<span>View Stream</span>
 						</Link>
 					</Button>
-					<Button asChild size="sm" className="gap-1.5">
+					<Button asChild size="sm" className="gap-1.5 bg-primary text-primary-foreground hover:bg-primary/90 font-medium shadow-xs">
 						<Link href="/chat">
 							<Sparkles className="h-4 w-4" />
 							<span>Ask Copilot</span>
@@ -335,7 +335,7 @@ export default function DashboardPage() {
 			<div className="rounded-xl border border-border/80 bg-gradient-to-r from-muted/60 via-muted/30 to-muted/60 p-4 shadow-xs">
 				<form onSubmit={handleCopilotSubmit} className="flex flex-col sm:flex-row items-center gap-3">
 					<div className="flex items-center gap-2 text-foreground font-medium text-sm shrink-0">
-						<Bot className="h-5 w-5 text-amber-400" />
+						<Bot className="h-5 w-5 text-muted-foreground" />
 						<span>Eve Lead Copilot:</span>
 					</div>
 					<Input
@@ -344,7 +344,7 @@ export default function DashboardPage() {
 						placeholder="Ask Copilot anything, e.g. 'Summarize today\'s hot pump inquiries' or 'Show uncontacted leads'…"
 						className="flex-1 bg-background/80"
 					/>
-					<Button type="submit" size="sm" className="gap-1.5 shrink-0">
+					<Button type="submit" size="sm" className="gap-1.5 shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 font-medium">
 						<span>Ask Agent</span>
 						<ArrowRight className="h-4 w-4" />
 					</Button>
@@ -393,7 +393,7 @@ export default function DashboardPage() {
 							onClick={() => setFilter("hot")}
 							className="text-xs h-7 gap-1"
 						>
-							<span className="size-1.5 rounded-full bg-amber-500" />
+							<span className="size-1.5 rounded-full bg-emerald-500" />
 							Hot (&gt;70)
 						</Button>
 						<Button

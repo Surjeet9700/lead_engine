@@ -101,8 +101,8 @@ export function AppIconRail() {
 											<Icon className="size-5" />
 											{item.badge && (
 												<span className="absolute -top-0.5 -right-0.5 flex h-2 w-2">
-													<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
-													<span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
+													<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+													<span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
 												</span>
 											)}
 											<span className="sr-only">{item.title}</span>
@@ -112,7 +112,7 @@ export function AppIconRail() {
 								<TooltipContent side="right" className="flex items-center gap-1.5 font-medium">
 									{item.title}
 									{item.badge && (
-										<span className="rounded bg-amber-500/10 px-1 py-0.2 text-[9px] text-amber-400">
+										<span className="rounded bg-emerald-500/10 px-1 py-0.2 text-[9px] text-emerald-400 border border-emerald-500/20">
 											{item.badge}
 										</span>
 									)}
@@ -180,7 +180,7 @@ export function AppIconRail() {
 										<Icon className="h-4 w-4" />
 										<span>{item.title}</span>
 										{item.badge && (
-											<span className="ml-auto rounded bg-amber-500/10 px-1.5 py-0.5 text-[10px] text-amber-400">
+											<span className="ml-auto rounded bg-emerald-500/10 px-1.5 py-0.5 text-[10px] text-emerald-400 border border-emerald-500/20">
 												{item.badge}
 											</span>
 										)}
