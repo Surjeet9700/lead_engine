@@ -1,0 +1,11 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "lead-speed-web",
+	"compatibility_date": "2025-04-01",
+	"assets": {
+		"directory": "out"
+	},
+	"vars": {
+		"NEXT_PUBLIC_WORKER_URL": "https://lead-speed-engine.surjeethkumar4.workers.dev"
+	}
+}
