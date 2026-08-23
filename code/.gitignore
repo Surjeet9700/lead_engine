@@ -1,0 +1,85 @@
+# Reference CRM Monorepo
+reference-crm/
+**/reference-crm/
+
+# Dependencies
+node_modules/
+**/node_modules/
+.pnpm-store/
+jspm_packages/
+web_modules/
+
+# Next.js Build & Export
+.next/
+**/.next/
+out/
+**/out/
+.open-next/
+**/.open-next/
+
+# Cloudflare & Serverless
+.wrangler/
+**/.wrangler/
+.mf/
+**/.mf/
+worker-configuration.d.ts
+cloudflare-env.d.ts
+
+# Turborepo & Build Artifacts
+.turbo/
+**/.turbo/
+dist/
+**/dist/
+build/
+**/build/
+
+# Environment Variables & Secrets
+.env
+.env*.local
+.env.production
+.env.development
+.env.test
+**/.env
+**/.env*.local
+**/.env.production
+**/.env.development
+**/.env.test
+
+# Logs & Runtime
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Testing & Coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# IDE & OS Files
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Temporary / Scratch
+scratch/
+**/scratch/
+tmp/
+**/tmp/
+*.tmp
+*.bak
+*.swp

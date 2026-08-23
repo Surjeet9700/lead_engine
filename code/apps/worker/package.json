@@ -1,0 +1,30 @@
+{
+	"name": "worker",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "bunx wrangler dev --local --port 8787",
+		"deploy": "bun run check && bun run test && bunx wrangler deploy",
+		"test": "bun test test/*.test.ts",
+		"test:loop": "bun test test/ingest.test.ts test/domain.test.ts test/consumer.test.ts test/sota-engine.test.ts",
+		"test:integration": "bunx vitest run -c vitest.workers.config.ts",
+		"check": "bunx tsc --noEmit",
+		"simulate": "bun run src/cli/simulate-lead.ts",
+		"db:migrate:local": "bunx wrangler d1 migrations apply lead-state --local",
+		"db:migrate": "bunx wrangler d1 migrations apply lead-state --remote",
+		"infra:create": "bunx wrangler d1 create lead-state && bunx wrangler queues create leads-queue && bunx wrangler queues create leads-dlq",
+		"cf-typegen": "bunx wrangler types"
+	},
+	"dependencies": {
+		"hono": "^4.13.3",
+		"zod": "^3.25.76"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "^0.22.0",
+		"@cloudflare/workers-types": "^4.20260702.0",
+		"typescript": "^5.9.3",
+		"vitest": "~4.1.0",
+		"wrangler": "^4.125.0"
+	}
+}

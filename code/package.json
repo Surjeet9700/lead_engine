@@ -1,0 +1,27 @@
+{
+	"name": "indiamart-lead-speed-engine",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"engines": { "bun": ">=1.3.11" },
+	
+	"scripts": {
+		"dev": "bun run --filter='*' dev",
+		"dev:worker": "bun run --filter=worker dev",
+		"dev:web": "bun run --filter=web dev",
+		"build": "bun run --filter='*' build",
+		"test": "bun run --filter=worker test",
+		"test:loop": "bun run --filter=worker test:loop",
+		"test:integration": "bun run --filter=worker test:integration",
+		"check": "bun run --filter='*' check",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"deploy": "bun run --filter=worker deploy && bun run --filter=web deploy",
+		"deploy:worker": "bun run --filter=worker deploy",
+		"deploy:web": "bun run --filter=web deploy"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4"
+	}
+}
+

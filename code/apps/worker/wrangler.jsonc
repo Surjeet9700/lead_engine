@@ -1,0 +1,44 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "lead-speed-engine",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-08-21",
+	"compatibility_flags": ["nodejs_compat"],
+	"observability": { "enabled": true, "head_sampling_rate": 1 },
+	"placement": { "mode": "smart" },
+
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "lead-state",
+			"database_id": "f23ef93f-a7b7-416f-89e1-d1079ad383c5",
+			"migrations_dir": "migrations"
+		}
+	],
+
+	"queues": {
+		"producers": [{ "binding": "LEADS_QUEUE", "queue": "leads-queue" }],
+		"consumers": [
+			{
+				"queue": "leads-queue",
+				"dead_letter_queue": "leads-dlq",
+				"max_batch_size": 5,
+				"max_batch_timeout": 1,
+				"max_retries": 3
+			}
+		]
+	},
+
+	// Enable at https://dash.cloudflare.com/0e6b27ac248508effdc4ea5277071cba/workers/analytics-engine
+	// then uncomment:
+	// "analytics_engine_datasets": [{ "binding": "LEAD_EVENTS", "dataset": "lead_events" }],
+
+	"vars": {
+		"APP_ENV": "production",
+		"WHATSAPP_API_VERSION": "v25.0"
+	},
+
+	"triggers": {
+		"crons": ["30 3 * * *"]
+	}
+}
